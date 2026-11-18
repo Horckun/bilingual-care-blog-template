@@ -1,0 +1,37 @@
+{
+  "name": "bilingual-care-blog-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "test": "vitest run",
+    "check": "astro check",
+    "test:e2e": "playwright test",
+    "validate:content": "node --experimental-strip-types scripts/validate-content.mts",
+    "validate:redirects": "node --experimental-strip-types scripts/validate-redirects.mts",
+    "import:wordpress": "node --experimental-strip-types scripts/import-wordpress.mts",
+    "audit:a11y": "playwright test tests/e2e/accessibility.spec.ts",
+    "audit:performance": "node --experimental-strip-types scripts/check-performance.mts",
+    "check:boundaries": "node --experimental-strip-types scripts/check-boundaries.mts",
+    "check:analytics-access": "node --experimental-strip-types scripts/validate-analytics-access-config.mts",
+    "test:scheduled-report": "node --experimental-strip-types scripts/test-scheduled-report.mts"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "4.3.13",
+    "astro": "5.18.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.6",
+    "@mdx-js/mdx": "3.1.1",
+    "@playwright/test": "1.57.0",
+    "@types/node": "22.19.1",
+    "typescript": "5.9.3",
+    "vitest": "3.2.6",
+    "yaml": "2.8.2"
+  }
+}
